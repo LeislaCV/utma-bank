@@ -34,7 +34,7 @@ class ManagerCard{
                 });
                 return "Ok";
             } catch (error) {
-                throw new Error(`Error al cargar la tarjeta: ${error}`);
+                throw new Error(`¡Error al cargar la tarjeta¡: ${error}`);
             }
         }
         async getCards(){
@@ -42,7 +42,7 @@ class ManagerCard{
                 const cards = await CardModel.find();
                 return cards;
             } catch (error) {
-                throw new Error(`Error al obtener tarjeta: ${error}`);
+                throw new Error(`¡Error al obtener tarjeta!: ${error}`);
     
             }
         }
@@ -52,9 +52,11 @@ class ManagerCard{
                 const card = await CardModel.findById(id);
                 return card;
             } catch (error) {
-                throw new Error(`Error al obtener tarjeta: ${error}`);
+                throw new Error(`¡Error al obtener tarjeta!: ${error}`);
     
             }
         }
     
     }
+
+    export default ManagerCard;

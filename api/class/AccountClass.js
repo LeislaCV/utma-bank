@@ -24,7 +24,7 @@ class ManagerAccount{
             const accounts = await AccountModel.find();
             return accounts;
         } catch (error) {
-            throw new Error(`Error al obtener cuentas: ${error}`);
+            throw new Error(`¡Error al obtener cuentas!: ${error}`);
 
         }
     }
@@ -34,7 +34,7 @@ class ManagerAccount{
             const account = await AccountModel.findById(id);
             return account;
         } catch (error) {
-            throw new Error(`Error al obtener cuenta: ${error}`);
+            throw new Error(`¡Error al obtener cuenta!: ${error}`);
 
         }
     }
@@ -49,7 +49,7 @@ class ManagerAccount{
             });
             return "Ok";
         } catch (error) {
-            throw new Error(`Error al agregar monto: ${error}`);
+            throw new Error(`¡Error al agregar monto!: ${error}`);
 
         }
     }
@@ -64,22 +64,22 @@ class ManagerAccount{
                 });
                 return "Ok";
             } catch (error) {
-                throw new Error(`Error al agregar monto: ${error}`);
+                throw new Error(`¡Error al agregar monto!: ${error}`);
     
             }
     }
 
     async createAccount(){
         try {
-            await AccountModel.create({
+            const account = await AccountModel.create({
             userId:this.userId,
             accountNumber:this.accountNumber,
             accountType:this.accountType,
             balance:this.balance
             });
-            return "Ok";
+            return account;
         } catch (error) {
-            throw new Error(`Error al crear cuenta: ${error}`);
+            throw new Error(`¡Error al crear cuenta!: ${error}`);
 
         }
         
