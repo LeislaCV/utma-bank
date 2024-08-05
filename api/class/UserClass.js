@@ -23,7 +23,7 @@ class ManagerUser {
         password
     ) {
 
-        this.email = email,
+        this.email = email;
             this.phone = phone;
         this.name = name;
         this.lastName = lastName;
@@ -38,7 +38,7 @@ class ManagerUser {
             const user = await UserModel.create({
                 email: this.email,
                 phone: this.phone,
-                name: this.name,
+                 name: this.name,
                 lastName: this.lastName,
                 islnSession: this.islnSession,
                 isAdmin: this.isAdmin,
@@ -121,7 +121,7 @@ class ManagerUser {
         } catch (error) {
             throw new Error("¡Error al actualizar la contraseña!");
         }
-    }
+    }   
 
     //Pendiente eliminar usuario
 }
